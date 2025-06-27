@@ -185,14 +185,6 @@ class Tasks {
 function Main(){
     const tasks = new Tasks()
     console.log(`----- Task Tracker CLI -----\n`)
-    //console.log(`\nModo de Uso: <comando> <parametro>`)
-    //console.log(`\nComandos:\n`)
-    //console.log(`list\nor`)
-    //console.log(`list <done, todo, in-progress>\n`)
-    //console.log(`add <description>\n`)
-    //console.log(`update <id> <description>\n`)
-    //console.log(`mark <id> <done, todo, in-progress>\n`)
-    //console.log(`delete <id>\n`)
     rl.question('', async(answer) => {
         const command = answer.split(" ")[0]
 
@@ -207,7 +199,8 @@ function Main(){
             else console.log("Parametro Inexistente")
         }
         else if(command === 'add'){
-            const parameter = [answer.split(" ")[1]]
+            const rawParameters = answer.split(" ")
+            const parameter = [rawParameters.entries()].filter((element => element.key !== 0))
             if(parameter !== undefined) tasks.add(parameter[0])
             else console.log("Falta de parametro")
         }
