@@ -27,3 +27,5 @@ O comando mark atualiza o status da task especificada pelo id.
 ## Delete
 `delete <idTask>`<br>
 O comando delete deleta a task especificada pelo id.
+
+Ideia de projeto obtida atraves do: https://roadmap.sh/projects/task-tracker
